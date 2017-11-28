@@ -52,7 +52,7 @@ def result():
         else :
             new_data.append("0")
     
-    marital = request.form["marital"]
+    marital = request.form["marital-status"]
     maritalList = ["Married-AF-Spouse", "Married-civ-spouse", "Married-spouse-absent", "Never-married", "Separated", "Widowed"]
     
     for i in range(len(maritalList)) :
@@ -97,7 +97,7 @@ def result():
         else :
             new_data.append("0")
 
-    country = request.form["country"]
+    country = request.form["native-country"]
     countryList = ["Cambodia", "Canada", "China", "Columbia", "Cuba", "Dominican-Republic", "Ecuador", "El-Salvador", "England", "France", "Germany", "Greece", "Guatemala", "Haiti", "Holand-Netherlands", "Honduras", "Hong", "Hungary", "India", "Iran", "Ireland", "Italy", "Jamaica", "Japan", "Laos","Mexico", "Nicaragua", "Outlying-US(Guam-USVI-etc)", "Peru", "Philippines", "Poland", "Portugal", "Puerto-Rico", "Scotland", "South", "Taiwan", "Thailand", "Trinadad&Tobago", "United-States", "Vietnam", "Yugoslavia"]
     
     for i in range(len(countryList)) :
