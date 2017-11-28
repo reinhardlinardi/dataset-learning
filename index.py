@@ -21,6 +21,7 @@ def index():
 
 @app.route('/result', methods=['GET','POST'])
 def result():
+    '''
     test_data = [39, "State-gov", 77516, "Bachelors", 13, "Never-married", "Adm-clerical", "Not-in-family", "White", "Male", 2174, 0, 40, "United-States"]
     new_data = [];
     new_data.append(request.form["age"])
@@ -93,13 +94,14 @@ def result():
 
     
     
-        #new_data.append()
+    #new_data.append()
     new_data = np.asarray(new_data)
     new_data = np.reshape(new_data, (1,-1))
     clf = joblib.load('clf.pkl')
     prediction = clf.predict(new_data)
-    return render_template('index.html', carry = type(prediction))
-
+    return render_template('result.html', result = type(prediction))
+    '''
+    return render_template('result.html')
 
 if __name__ == '__main__' :
     app.run(debug = True)
