@@ -110,9 +110,9 @@ def result():
     clf = joblib.load('model/clf.pkl')
     prediction = clf.predict(new_data)
     if (prediction[0] == 0.0) :
-        return "<50k"
+        return render_template('result.html', result="<=50k")
     else :
-        return ">50k"
+        return render_template('result.html', result=">50k")
 
 
 if __name__ == '__main__' :
