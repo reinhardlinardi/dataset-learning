@@ -23,6 +23,7 @@ def index():
 def result():
     '''
     test_data = [39, "State-gov", 77516, "Bachelors", 13, "Never-married", "Adm-clerical", "Not-in-family", "White", "Male", 2174, 0, 40, "United-States"]
+    
     new_data = [];
     new_data.append(request.form["age"])
     new_data.append(request.form["fnlwgt"])
@@ -30,12 +31,15 @@ def result():
     new_data.append(request.form["capital-gain"])
     new_data.append(request.form["capital-loss"])
     new_data.append(request.form["hours-per-week"])
+    
     workclass = request.form["workclass"]
+    
     for i in range (8) :
         if (((i == 0) and (workclass == "Federal-gov")) or ((i == 1) and (workclass == "Local-gov")) or ((i == 2) and (workclass == "Never-worked")) or ((i == 3) and (workclass == "Private")) or ((i == 4) and (workclass == "Self-emp-inc")) or ((i == 5) and (workclass == "Self-emp-not-inc")) or ((i == 6) and (workclass == "State-gov")) or ((i == 7) and (workclass == "Without-pay"))) :
             new_data.append("1")
         else :
             new_data.append("0")
+    
     education = request.form["education"]
     educationList = ["10th", "11th", "12th", "1st-4th", "5th-6th", "7th-8th", "9th", "Assoc-acdm", "Assoc-voc", "Bachelors", "Doctorate", "HS-Grad", "Masters", "Preschool", "Prof-School", "Some-college"]
     for j in range(16) :
