@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', carry = 'Cisco')
+    return render_template('index.html')
 
 @app.route('/result', methods=['GET','POST'])
 def result():
