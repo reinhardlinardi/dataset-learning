@@ -110,12 +110,39 @@ def result():
     new_data = np.reshape(new_data, (1,-1))
     clf = joblib.load('model/clf.pkl')
     prediction = clf.predict(new_data)
-    
-    if (prediction[0] == 0.0) :
-        return render_template('result.html', result="<=50k")
-    else :
-        return render_template('result.html', result=">50k")
 
+    if (prediction[0] == 0.0) :
+        return render_template('result.html', result="<=50k",
+                                _age=request.form["age"],
+                                _workclass=request.form["workclass"],
+                                _fnlwgt=request.form["fnlwgt"],
+                                _education=request.form["education"],
+                                _education_num=request.form["education-num"],
+                                _marital_status=request.form["marital-status"],
+                                _occupation=request.form["occupation"],
+                                _relationship=request.form["relationship"],
+                                _race=request.form["race"],
+                                _sex=request.form["sex"],
+                                _capital_gain=request.form["capital-gain"],
+                                _capital_loss=request.form["capital-loss"],
+                                _hours_per_week=request.form["hours-per-week"],
+                                _native_country=request.form["native-country"])
+    else :
+        return render_template('result.html', result=">50k",
+                                _age=request.form["age"],
+                                _workclass=request.form["workclass"],
+                                _fnlwgt=request.form["fnlwgt"],
+                                _education=request.form["education"],
+                                _education_num=request.form["education-num"],
+                                _marital_status=request.form["marital-status"],
+                                _occupation=request.form["occupation"],
+                                _relationship=request.form["relationship"],
+                                _race=request.form["race"],
+                                _sex=request.form["sex"],
+                                _capital_gain=request.form["capital-gain"],
+                                _capital_loss=request.form["capital-loss"],
+                                _hours_per_week=request.form["hours-per-week"],
+                                _native_country=request.form["native-country"])
 
 if __name__ == '__main__' :
     app.run(debug = True)
