@@ -110,7 +110,7 @@ def result():
     new_data = np.reshape(new_data, (1,-1))
     clf = joblib.load('model/clf.pkl')
     prediction = clf.predict(new_data)
-    #return render_template('result.html', result = type(prediction))
+    return render_template('result.html', result = type(prediction))
     '''
     return render_template('result.html')
     '''
