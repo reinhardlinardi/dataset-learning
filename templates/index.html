@@ -30,8 +30,30 @@
                 <div class="col-md-2">
                     <div class="text-right">Age</div>
                 </div>
-                <div class="col-md-4">
-                    <input type="number" name="age" min="1">
+                <div class="col-md-3">
+                    <input type="number" class="form-control" name="age" value="1" required>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+            <br/>
+
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-2">
+                    <div class="text-right">Workclass</div>
+                </div>
+                <div class="col-md-3">
+                    <select class="custom-select" name="workclass">
+                        <option value="Private" selected>Private</option>
+                        <option value="Self-emp-not-inc">Self-emp-not-inc</option>
+                        <option value="Self-emp-inc">Self-emp-inc</option>
+                        <option value="Federal-gov">Federal-gov</option>
+                        <option value="Local-gov">Local-gov</option>
+                        <option value="State-gov">State-gov</option>
+                        <option value="Without-pay">Without-pay</option>
+                        <option value="Never-worked">Never-worked</option>
+                    </select>
                 </div>
                 <div class="col-md-3"></div>
             </div>
