@@ -52,8 +52,9 @@ def result():
         else :
             new_data.append("0")
     
+    marital = request.form["marital-status"]
     maritalList = ["Divorced","Married-AF-Spouse", "Married-civ-spouse", "Married-spouse-absent", "Never-married", "Separated", "Widowed"]
-    marital = request.form["marital"]
+    
     for k in range(len(maritalList)) :
         if (maritalList[k] == marital) :
             new_data.append("1")
@@ -109,6 +110,7 @@ def result():
     new_data = np.reshape(new_data, (1,-1))
     clf = joblib.load('model/clf.pkl')
     prediction = clf.predict(new_data)
+    
     if (prediction[0] == 0.0) :
         return render_template('result.html', result="<=50k")
     else :
